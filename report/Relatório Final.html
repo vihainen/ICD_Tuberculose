@@ -25,12 +25,16 @@
 			<div class="paragraph">
 				O grupo decidiu se afastar de pesquisas diretamente relacionadas à pandemia atualmente em curso no globo, e preferiu estudar sobre outras doenças que mazelam o mundo e que ficaram em segundo plano. O conjunto de dados da OMS sobre tuberculose é completo e compreensivo, e permite levantar questionamentos interessantes de serem respondidos através da aplicação de ciência dos dados.
 			</div>
-			<h3>III. Perguntas</h3>
+			<h3>III. Perguntas e Metodologia</h3>
 			<div class="paragraph">
 				<span>1 - É possível traçar um perfil entre a quantidade de casos de tuberculose e o tamanho da população?</span>
+				<span>Para tentar traçar este perfil, utilizaremos de uma regressão entre o tamanho da população e a quantidade de casos de tuberculose por 100 mil habitantes, numa tentativa de achar alguma correlação entre as variáveis.</span>
 				<span>2 - A quantidade de pessoas infectadas com hiv afeta a quantidade de óbitos por Tuberculose?</span>
+				<span>Mais uma vez faremos uso de regressão, agora para tentar traçar uma relação entre a quantidade de casos de comorbidade de tuberculose com HIV e a quantidade de óbitos, que aparentou existir após a análise exploratória.</span>
 				<span>3 - Qual país combateu a Tuberculose com mais eficácia nos últimos anos?</span>
-				<span>4 - É possível traçar um perfil entre a quantidade de novos casos ou casos de reinfecção com a quantidade de óbitos?</span>
+				<span>Para responder essa pergunta, faremos uma análise direta dos dados.</span>
+				<span>4 - É possível traçar um perfil entre a quantidade de novos casos ou casos de reinfecção e a cobertura de tratamento?</span>
+				<span>Por fim, utilizaremos uma KNN para tentar classificar os dados de acordo com sua cobertura a partir da quantidade de novos casos, supondo que melhores coberturas de tratamento implicam em menor quantidade de novos casos. Para fins de validação, faremos o mesmo processo através de uma <i>Decision Tree</i>, e compararemos seus resultados.</span>
 			</div>
 			<h3>IV. Base de Dados</h3>
 			<div class="paragraph">
@@ -47,6 +51,7 @@
 			<div class="paragraph">
 				A base da OMS é extensa, seu dicionário de dados listando mais de 500 variáveis, muitas desnecessárias para a execução deste estudo. Além disso, possuem dados de todos os países, o que excede o escopo proposto. Realizamos um aparo da base de dados, facilitando a visualização e uso dos mesmos e restringindo os dados aos países da América do Sul.
 			</div>
+			<span>As próximas seções configuram os resultados da pesquisa. A primeira é a caracterização, e as seguintes englobam as hipóteses e conclusões.</span>
 			<h3>V. Análise Exploratória</h3>
 			<div class="paragraph">
 				<span>Daqui em diante seguiremos as escolhas de apresentação utilizadas no trabalho de exemplo disponibilizado pelo professor. Nessa seção mostraremos as tendências principais pertinentes para as análises que serão realizadas.</span>
@@ -129,9 +134,28 @@ A Bolívia, que trata menos de 70% dos casos, e hoje aproxima-se de 60% de efic�
 			<div class="paragraph">
 				<img src='figures/analise_8.png'/>
 				<span>"Mais eficácia" é um termo que pode tomar mais de uma forma. Vamos analisar duas delas.</span>
-				<span>Os países que têm maior cobertura de tratamento, previamente classificados juntos durante a análise exploratória, são Brasil, Paraguai, Uruguai, Chile e Argentina, todos com taxas muito próximas de cobertura. Pode-se dizer que são os que obtiveram maior eficácia nos últimos anos, e esse resultado é esperado considerando as condições de desenvolvimento de cada nação. Em particular esses países são os que têm os maiores IDH da América do Sul[<a href="https://en.wikipedia.org/wiki/List_of_Latin_American_countries_by_Human_Development_Index"><sup>1</sup></a>], com a notável exceção do Paraguai.</span>
+				<span>Os países que têm maior cobertura de tratamento, previamente classificados juntos durante a análise exploratória, são Brasil, Paraguai, Uruguai, Chile e Argentina, todos com taxas muito próximas de cobertura. Pode-se dizer que são os que obtiveram maior eficácia nos últimos anos, e esse resultado é esperado considerando as condições de desenvolvimento de cada nação. Em particular esses países são os que têm os maiores IDH da América do Sul<sup>[<a href="https://en.wikipedia.org/wiki/List_of_Latin_American_countries_by_Human_Development_Index">1</a>]</sup>, com a notável exceção do Paraguai.</span>
 				<span>Outro país na metade superior dos IDH do continente é o Peru, que poderia também ser dito como o que combateu a Tuberculose com mais eficácia nos últimos anos; Por ter sido capaz de aumentar significativamente sua cobertura acima da média histórica das décadas anteriores, o país se mostra capaz de alcançar o patamar de seus vizinhos mais eficientes na luta contra a doença.</span>
 			</div>
+			<h3>IX. Quarta Pergunta</h3>
+			<span>É possível traçar um perfil entre a quantidade de novos casos ou casos de reinfecção e a cobertura de tratamento?</span>
+			<h4>Classificação</h4>
+			<span>Vamos agora classificar os países em grupos de eficácia de acordo com os grupos citados na pergunta anterior, e tentar usar uma KNN para encontrar um perfil entre as duas variáveis.</span>
+			<div class="paragraph">
+				<span>Distribuição da cobertura de tratamento por país por ano:</span>
+				<img src="figures/qp_1.png"/>
+				<span>Tanto o KNN quanto a <i>Decision Tree</i> foram rodados 5000 vezes, armazenando-se as acurácias de cada, sobre um split de 75/25 de treino/teste.</span>
+			</div>
+			<h4>Resultados</h4>
+			<div class="paragraph">
+				<span>Média de acurácia do KNN: 63.15%</span>
+				<span>Média de acurácia da <i>Decision Tree</i>: 63.5%</span>
+				<span>Distribuição das acurácias:</span>
+				<img src="figures/qp_2.png"/>
+				<span>A distribuição de acurácia de ambos modelos é bem semelhante, e ambas insuficientes. Concluímos que número proporcional de novos casos serve apenas como um estimador grosseiro para a cobertura de tratamento.</span>
+			</div>
+			<h3>X. Conclusão</h3>
+			<span>O trabalho se mostrou uma experiência única para aplicarmos os conhecimentos obtidos em aula, e, apesar de nenhum resultado particularmente interessante ter se erguido dessa exploração, a experiência foi muito enriquecedora.</span>
 		</div>
 	</body>
 </html>
