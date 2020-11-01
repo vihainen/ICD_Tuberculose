@@ -85,6 +85,43 @@ Países como Brasil, Uruguai e Argentina, que detectam e tratam mais que 80% dos
 Países como Equador, Guiana e Suriname, que detectam e tratam aproximadamente 80% dos casos;
 A Bolívia, que trata menos de 70% dos casos, e hoje aproxima-se de 60% de eficácia.</span>
 			</div>
+			<h3>VI. Primeira Pergunta</h3>
+			<span>É possível traçar um perfil entre a quantidade de casos de tuberculose e o tamanho da população?</span>
+			<h4>Teste de Hipótese</h4>
+			<div class="paragraph">
+				<span>Hipótese nula: O tamanho da população não afeta o número proporcional de casos de tuberculose.</span>
+				<span>Hipótese alternativa: O tamanho da população afeta o número proporcional de casos de tuberculose.</span>
+				<img src='figures/pp_1.png'/>
+				<img src='figures/pp_2.png'/>
+			</div>
+			<h4>Teste</h4>
+			<div class="paragraph">
+				<span>Através de uma regressão linear realizada entre casos por 100 mil habitantes por número de habitantes, parece surgir uma leve tendência decrescente.</span>
+				<span>O segundo gráfico mostra a mesma regressão excluindo os dados do Brasil que, por possuir aproximadamente metade da população do continente, torna o gráfico mais difícil de se visualizar.</span>
+			</div>
+			<h4>Variável de Confusão</h4>
+			<div class="paragraph">
+				<span>Apesar da aparente tendência decrescente, analisamos que a possível correlação entre tamanho da população e casos por 100 mil habitantes é espúria, afetada por uma variável de confusão não presente nos dados da OMS. Países tendem a ter populações maiores quão mais desenvolvidos economica e socialmente são, e essa variável que teria correlação com casos por 100 mil habitantes, pois mais desenvolvimento implica em maior acesso à saúde e maior qualidade dos serviços.</span>
+			</div>
+			<h3>VII. Segunda Pergunta</h3>
+			<span>A quantidade de pessoas infectadas com HIV afeta a quantidade de óbitos por Tuberculose?</span>
+			<h4>Teste de Hipótese</h4>
+			<div class="paragraph">
+				<span>Hipótese nula: A quantidade de pessoas infectadas com HIV afeta a quantidade de óbitos</span>
+				<span>Hipótese alternativa: A quantidade de pessoas infectadas com HIV afeta a quantidade de óbitos</span>
+				<span>Para validar a hipótese nula, procuraremos encontrar através de regressão linear uma tendência crescente significativa entre a comorbidade e quantidade de óbitos.</span>
+				<img src='figures/sp_1.png'/>
+				<span>Ao fazer uma regressão entre a quantidade de óbitos por 100 mil habitantes e a quantidade de casos de tuberculose comórbida com HIV, parece surgir uma grande correlação. Mas essa comparação tem um problema - pode ser que a quantidade de casos comórbidos sobe junto com a quantidade de casos.</span>
+				<img src='figures/sp_2.png'/>
+				<span>Aqui a regressão linear é entre óbitos por 100 mil habitantes e percentual de casos de comorbidade sobre os casos totais de tuberculose. Como podemos ver, mesmo quando o percentual de casos de tuberculose comórbidos com HIV crescem expressivamente, a tendêndica do número de óbitos tende a ser a mesma. Não há correlação, e a hipótese nula é invalidada.</span>
+			</div>
+			<h4>Intervalo de Confiança</h4>
+			<span>Testamos então o intervalo de confiança da comorbidade, e encontramos os valores (10.72240, 12.40015).</span>
+			<h4>Bootstrap</h4>
+			<div class="paragraph">
+				<span>Para validar o IC, plotamos um bootstrap realizado em cima de médias de comorbidade:
+				<img src='figures/sp_3.png'/>
+			</div>
 		</div>
 	</body>
 </html>
