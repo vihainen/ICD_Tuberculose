@@ -14,3 +14,17 @@
 	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 	font-size: small;
 }
+
+.code {
+	font-family: monospace;
+	background-color: aliceblue;
+	font-size: medium;
+}
+
+a {
+	color: cornflowerblue;
+}
+
+a:visited {
+	color: darkorchid;
+}
