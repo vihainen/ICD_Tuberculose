@@ -7,6 +7,7 @@ Projeto final da matéria de Introdução à Ciência dos Dados da UFMG. Focado 
 ### /data
 
 Contém tanto os dados providos pela OMS quanto o subconjunto dos mesmos que contém as variáveis relevantes para o trabalho.
+
 **Fonte:** [WHO TB burden estimates](https://www.who.int/tb/country/data/download/en/)
 
 ### ./*.ipynb
