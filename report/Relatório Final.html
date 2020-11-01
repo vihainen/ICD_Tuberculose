@@ -17,20 +17,35 @@
 				<span>Vídeo: <a href="https://youtu.be/LINKQUANDOTIVER">Youtube</a></span>
 				<span>Github: <a href="https://github.com/vihainen/ICD_Tuberculose">ICD_Tuberculose</a></span>
 			</div>
-			<h3>Introdução</h3>
+			<h3>I. Introdução</h3>
 			<div class="paragraph">
 				Focaremos em analisar dados da Organização Mundial da Saúde sobre a tuberculose, limitado a países da América do Sul, entre os anos 2000 e 2019.
 			</div>
-			<h3>Motivação</h3>
+			<h3>II. Motivação</h3>
 			<div class="paragraph">
 				O grupo decidiu se afastar de pesquisas diretamente relacionadas à pandemia atualmente em curso no globo, e preferiu estudar sobre outras doenças que mazelam o mundo e que ficaram em segundo plano. O conjunto de dados da OMS sobre tuberculose é completo e compreensivo, e permite levantar questionamentos interessantes de serem respondidos através da aplicação de ciência dos dados.
 			</div>
-			<h3>Perguntas</h3>
+			<h3>III. Perguntas</h3>
 			<div class="paragraph">
 				<span>1 - É possível traçar um perfil entre a quantidade de casos de tuberculose e o tamanho da população?</span>
 				<span>2 - A quantidade de pessoas infectadas com hiv afeta a quantidade de óbitos por Tuberculose?</span>
 				<span>3 - Qual país combateu a Tuberculose com mais eficácia nos últimos anos?</span>
 				<span>4 - É possível traçar um perfil entre a quantidade de novos casos ou casos de reinfecção com a quantidade de óbitos?</span>
+			</div>
+			<h3>IV. Base de Dados</h3>
+			<div class="paragraph">
+				<span>Para a realização deste trabalho utilizamos dados disponibilizados publicamente pela Organização Mundial da Saúde (OMS). Nessa primeira seção iremos prover uma descrição básica dos dados e realizar uma limpeza dos mesmos, gerando um conjunto de dados apropriado para exploração nas demais seções.</span>
+			</div>
+			<h4>WHO TB burden estimates</h4>
+			<div class="paragraph">
+				<span><b>Descrição:</b> Base de dados completa gerada pela OMS para o *Global Tuberculosis Report* (Relatório Global sobre a Tuberculose). Inclui estimativas de mortalidade, incidência de casos, taxa de mortalidade, cobertura de tratamento, status de HIV e diversas outras informações clínicas, para todos os países incluídos no relatório, a partir do ano 2000.</span>
+				<span>Inclui-se um dicionário de dados contendo os nomes das variáveis do conjunto de dados e suas definições.</span>
+				<span><b>Fonte:</b> <a href='https://www.who.int/tb/country/data/download/en/'>WHO TB burden estimates</a></span>
+				<span><b>Arquivos:</b> A base de dados disponibilizada encontra-se em `/data/raw/TB_burden_countries_2020-11-01.csv`, e o dicionário de dados em `/data/raw/TB_data_dictionary_2020-11-01`.</span>
+			</div>
+			<h4>Limpeza de Dados</h4>
+			<div class="paragraph">
+				A base da OMS é extensa, seu dicionário de dados listando mais de 500 variáveis, muitas desnecessárias para a execução deste estudo. Além disso, possuem dados de todos os países, o que excede o escopo proposto. Realizamos um aparo da base de dados, facilitando a visualização e uso dos mesmos e restringindo os dados aos países da América do Sul.
 			</div>
 		</div>
 	</body>
