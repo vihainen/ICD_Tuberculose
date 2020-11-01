@@ -1,0 +1,16 @@
+.paragraph {
+	display: flex;
+	flex-direction: column;
+}
+
+.paragraph > * {
+	margin-bottom: 1em;
+}
+
+.container {
+	margin: 2em 20%;
+	padding: 2em 10%;
+	box-shadow: 0 0 10px lightgrey;
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	font-size: small;
+}
